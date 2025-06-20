@@ -1,0 +1,11 @@
+loki:
+  singleBinary:
+    replicas: 1 # Ensure only one replica for local storage
+  storage:
+    type: filesystem
+    filesystem:
+      directory: /tmp/loki/data # Path inside the container where Loki stores data
+  persistence:
+    enabled: true
+    size: 3Gi # Adjust size as needed
+    storageClass: standard # Or your default storage class
