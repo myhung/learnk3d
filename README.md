@@ -57,3 +57,15 @@ helm repo update
 helm install loki grafana/loki --namespace monitoring -f ./loki-helm.yaml 
 helm install promtail grafana/promtail --namespace monitoring
 ```
+
+### Trun off
+```
+helm -n monitoring list 
+
+helm -n monitoring uninstall prometheus-community/kube-prometheus-stack
+```
+```
+k3d cluster list
+
+k3d cluster stop my-monitor-cluster
+```
